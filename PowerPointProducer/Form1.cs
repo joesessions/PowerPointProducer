@@ -46,7 +46,9 @@ namespace PowerPointProducer
         {
 
 
-            string titleText = textBox1.Text;
+            try
+            {
+string titleText = textBox1.Text;
 
             var punctuation = titleText.Where(Char.IsPunctuation).Distinct().ToArray();
             var words = titleText.Split().Select(x => x.Trim(punctuation));
@@ -108,6 +110,12 @@ namespace PowerPointProducer
             pictureBox6.ImageLocation = json.items[6].link;
             pictureBox7.ImageLocation = json.items[7].link;
             pictureBox8.ImageLocation = json.items[8].link;
+            }
+            catch
+            {
+
+            }
+            
         }
             
                 
