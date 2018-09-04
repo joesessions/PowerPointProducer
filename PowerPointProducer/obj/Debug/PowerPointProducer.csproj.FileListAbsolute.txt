@@ -1,0 +1,15 @@
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\bin\Debug\PowerPointProducer.exe.config
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\bin\Debug\PowerPointProducer.exe
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\bin\Debug\PowerPointProducer.pdb
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Form1.resources
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Properties.Resources.resources
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.csproj.GenerateResource.Cache
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.exe
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.pdb
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.csprojResolveAssemblyReference.cache
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\bin\Debug\Newtonsoft.Json.dll
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\bin\Debug\Newtonsoft.Json.xml
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Form2.resources
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Form3.resources
+c:\users\joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Form4.resources
+C:\Users\Joe\documents\visual studio 2015\Projects\PowerPointProducer\PowerPointProducer\obj\Debug\PowerPointProducer.Form5.resources
