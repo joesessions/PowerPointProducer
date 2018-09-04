@@ -329,14 +329,14 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(590, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(314, 36);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Terms included in search:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.AutoSize = true;
+            //this.label3.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.label3.Location = new System.Drawing.Point(590, 138);
+            //this.label3.Name = "label3";
+            //this.label3.Size = new System.Drawing.Size(314, 36);
+            //this.label3.TabIndex = 26;
+            //this.label3.Text = "Terms included in search:";
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -420,7 +420,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            //this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

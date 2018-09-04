@@ -20,16 +20,6 @@ namespace PowerPointProducer
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void aBoldCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -37,79 +27,74 @@ namespace PowerPointProducer
 
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e) //populate images and assign text to ViewModel
+        private void button2_Click(object sender, EventArgs e) // Find Images button.
         {
 
 
             try
             {
-string titleText = textBox1.Text;
+                string titleText = textBox1.Text;
 
-            var punctuation = titleText.Where(Char.IsPunctuation).Distinct().ToArray();
-            var words = titleText.Split().Select(x => x.Trim(punctuation));
+                var punctuation = titleText.Where(Char.IsPunctuation).Distinct().ToArray();
+                var words = titleText.Split().Select(x => x.Trim(punctuation));
 
-            string searchString = titleText;
-            char[] searchable = richTextBox1.Rtf.ToCharArray();
-            int startIndex; int stringLength;
-            for (int i = 0; i < searchable.Length - 5; i++)
-            {
-                //find first bold key /b/ start
-                if (searchable[i] == 92 && searchable[i + 1] == 'b' && searchable[i + 2] == 92)
+                string searchString = titleText;
+                char[] searchable = richTextBox1.Rtf.ToCharArray();
+                int startIndex; int stringLength;
+                for (int i = 0; i < searchable.Length - 5; i++)
                 {
-                    //inner loop: find first blank and start, end at first  / find end of bold
-
-                    while (searchable[i] != ' ')
+                    //find first bold key /b/ start
+                    if (searchable[i] == 92 && searchable[i + 1] == 'b' && searchable[i + 2] == 92)
                     {
-                        i++;
-                    }
-                    startIndex = i;
-                    while (searchable[i] != 92)
-                    {
-                        i++;
-                    }
-                    stringLength = i - startIndex;
+                        //inner loop: find first blank and start, end at first  / find end of bold
 
-                    searchString += new string(richTextBox1.Rtf.ToCharArray(startIndex, stringLength));
+                        while (searchable[i] != ' ')
+                        {
+                            i++;
+                        }
+                        startIndex = i;
+                        while (searchable[i] != 92)
+                        {
+                            i++;
+                        }
+                        stringLength = i - startIndex;
+
+                        searchString += new string(richTextBox1.Rtf.ToCharArray(startIndex, stringLength));
+
+                    }
 
                 }
+                richTextBox2.Text = searchString;
 
-            }
-            richTextBox2.Text = searchString;
+                var searchTerm = textBox1.Text + " " + searchString;
 
-            var searchTerm = textBox1.Text + " " + searchString;
+                string[] searchTermArray = searchTerm.Split(' ');
 
-            string[] searchTermArray = searchTerm.Split(' ');
+                if (searchTermArray[(searchTermArray.Length - 1)] == "")
+                {
+                    searchTermArray[(searchTermArray.Length - 1)] = "image";
+                }
 
-            if (searchTermArray[(searchTermArray.Length - 1)] == "")
-            {
-                searchTermArray[(searchTermArray.Length - 1)] = "image";
-            }
+                string searchTermString = string.Join("+", searchTermArray);
 
-            string searchTermString = string.Join("+", searchTermArray);
+                RestClient rClient = new RestClient();
 
-            RestClient rClient = new RestClient();
+                rClient.endPoint = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDrvqQuRIQvQ_yeKfy1knUXZpxAeQlTh8U&cx=007365820605907751637:tuepjecdrqe&searchType=image&q=" + searchTermString;
 
-            rClient.endPoint = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDrvqQuRIQvQ_yeKfy1knUXZpxAeQlTh8U&cx=007365820605907751637:tuepjecdrqe&searchType=image&q=" + searchTermString;
-
-            //debugOutput("REST Client Created")  https://cse.google.com/cse?cx=007365820605907751637:tuepjecdrqe
-            string strResponse = string.Empty;
-            strResponse = rClient.makeRequest();
-            dynamic json = JsonConvert.DeserializeObject(strResponse);
+                //debugOutput("REST Client Created")  https://cse.google.com/cse?cx=007365820605907751637:tuepjecdrqe
+                string strResponse = string.Empty;
+                strResponse = rClient.makeRequest();
+                dynamic json = JsonConvert.DeserializeObject(strResponse);
 
 
-            pictureBox1.ImageLocation = json.items[1].link;
-            pictureBox2.ImageLocation = json.items[2].link;
-            pictureBox3.ImageLocation = json.items[3].link;
-            pictureBox4.ImageLocation = json.items[4].link;
-            pictureBox5.ImageLocation = json.items[5].link;
-            pictureBox6.ImageLocation = json.items[6].link;
-            pictureBox7.ImageLocation = json.items[7].link;
-            pictureBox8.ImageLocation = json.items[8].link;
+                pictureBox1.ImageLocation = json.items[1].link;
+                pictureBox2.ImageLocation = json.items[2].link;
+                pictureBox3.ImageLocation = json.items[3].link;
+                pictureBox4.ImageLocation = json.items[4].link;
+                pictureBox5.ImageLocation = json.items[5].link;
+                pictureBox6.ImageLocation = json.items[6].link;
+                pictureBox7.ImageLocation = json.items[7].link;
+                pictureBox8.ImageLocation = json.items[8].link;
             }
             catch
             {
@@ -117,8 +102,7 @@ string titleText = textBox1.Text;
             }
             
         }
-            
-                
+   
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -177,14 +161,6 @@ string titleText = textBox1.Text;
 
             textBox2.Text = Convert.ToString(sum);
             label5.ForeColor = Color.Black;
-
-            
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -229,10 +205,11 @@ string titleText = textBox1.Text;
 
         private void timer1_Tick(object sender, EventArgs e) //populate images and assign text to ViewModel every second
         {
-            
 
+            // This was a better method - to have the form continually refreshing the images as the user types - 
+            // but it quickly exceeded the number of api calls on a free Google api. Hence the button approach.  :)
 
-       }
+        }
     }
     
 }
